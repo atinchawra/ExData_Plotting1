@@ -9,4 +9,7 @@ d<-transform(d,DateTime=paste(Date,Time))
 d<-transform(d,DateTime=dmy_hms(DateTime))
 
 #2
-with(d,plot(DateTime,Global_active_power,type="l"))
+png("plot2.png")
+with(d,plot(DateTime,Global_active_power,main="",ylab="",xlab="",type="l"))
+title(ylab="Global Active Power (kilowatts)")
+dev.off()

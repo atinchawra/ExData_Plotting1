@@ -9,4 +9,6 @@ d<-transform(d,DateTime=paste(Date,Time))
 d<-transform(d,DateTime=dmy_hms(DateTime))
 
 #1
+png("plot1.png")
 hist(d$Global_active_power,main="Global Active Power",xlab="Global Active Power (kilowatts)",ylab="Frequency",col="red")
+dev.off()

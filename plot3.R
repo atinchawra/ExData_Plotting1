@@ -9,6 +9,10 @@ d<-transform(d,DateTime=paste(Date,Time))
 d<-transform(d,DateTime=dmy_hms(DateTime))
 
 #3
-with(d,plot(DateTime,Sub_metering_1,col="black",type="l"))
+png("plot3.png")
+par(cex=0.6)
+with(d,plot(DateTime,Sub_metering_1,ylab="Energy sub metering",xlab="",col="black",type="l"))
 with(d,lines(DateTime,Sub_metering_2,col="red",type="l"))
 with(d,lines(DateTime,Sub_metering_3,col="blue",type="l"))
+legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lty=1,col=c("black","red","blue"))
+dev.off()
